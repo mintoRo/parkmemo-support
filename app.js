@@ -16,7 +16,8 @@ function filterQuestions() {
 }
 function setLanguage(next) {
   language = next;
-  document.querySelector('#privacy-link').href = next === 'zh' ? 'privacy/' : 'privacy/en/';
+  const privacyLink = document.querySelector('#privacy-link');
+  if (privacyLink) privacyLink.href = next === 'zh' ? 'privacy/' : 'privacy/en/';
   document.documentElement.lang = next === 'zh' ? 'zh-CN' : 'en';
   document.querySelectorAll('[data-zh]').forEach(element => { element.innerHTML = element.dataset[next]; });
   document.title = next === 'zh' ? '泊记 ParkMemo · 技术支持' : 'ParkMemo · Support';
