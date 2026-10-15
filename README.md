@@ -46,3 +46,10 @@ python3 -m http.server 4173 --bind 127.0.0.1
 ## 更新脚本
 
 修改 `app.js` 后，同步更新 `index.html` 中脚本 URL 的 `v` 参数（使用脚本内容的 SHA-256 前 12 位），避免浏览器继续使用 GitHub Pages 缓存中的旧脚本。
+
+## 隐私政策
+
+- 中文：https://mintoro.github.io/parkmemo-support/privacy/
+- English: https://mintoro.github.io/parkmemo-support/privacy/en/
+
+两个页面均直接包含对应语言的完整内容，无需 JavaScript。根据当前 App 的定位、气压、照片、快捷指令、小组件、本机诊断与存储代码编写；同时说明地图服务、系统备份、支持邮件及 GitHub Pages 托管的数据处理。数据处理方式变化后应同步更新两种语言的政策。
