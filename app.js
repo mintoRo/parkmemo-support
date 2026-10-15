@@ -31,7 +31,12 @@ function setLanguage(next) {
   search.value = '';
   filterQuestions();
 }
-document.querySelector('#language').addEventListener('click', () => setLanguage(language === 'zh' ? 'en' : 'zh'));
+document.querySelector('#language').addEventListener('click', () => {
+  setLanguage(language === 'zh' ? 'en' : 'zh');
+  const url = new URL(window.location.href);
+  url.searchParams.set('lang', language);
+  window.history.replaceState(null, '', url);
+});
 search.addEventListener('input', filterQuestions);
 document.querySelector('#copy-email').addEventListener('click', async () => {
   try {
@@ -42,4 +47,7 @@ document.querySelector('#copy-email').addEventListener('click', async () => {
   }
 });
 document.querySelector('#year').textContent = new Date().getFullYear();
-setLanguage(navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en');
+const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
+setLanguage(['zh', 'en'].includes(requestedLanguage)
+  ? requestedLanguage
+  : (navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en'));

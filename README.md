@@ -8,6 +8,14 @@
 - 邮件反馈模板；网站不会代替访客发送邮件
 - 自适应布局与键盘访问
 
+## 网站语言链接
+
+- 默认英文：https://mintoro.github.io/parkmemo-support/?lang=en
+- 默认中文：https://mintoro.github.io/parkmemo-support/?lang=zh
+- 自动跟随浏览器语言：https://mintoro.github.io/parkmemo-support/
+
+`lang=en` 或 `lang=zh` 优先于浏览器语言；未指定或不支持的参数自动回退到浏览器语言（中文为中文，其他语言为英文）。手动切换语言会更新当前链接，刷新或分享该链接可保留所选语言。
+
 ## 本地预览
 
 ```sh
@@ -24,7 +32,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 4. 在 Build and deployment 中选择 Deploy from a branch，再选择 `main` 和 `/ (root)`，保存。
 5. 等待 GitHub Pages 构建成功，并使用页面显示的实际网址。
 
-预计网址为 https://mintoro.github.io/parkmemo-support/ ，该网址需部署成功后才能使用。
+网站已发布至 https://mintoro.github.io/parkmemo-support/ 。后续推送至 `main` 会自动部署。
 
 不要将 App 源码仓库及其 Git 历史复制到本仓库。本目录与 App 仓库相互独立。
 
